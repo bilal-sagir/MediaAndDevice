@@ -11,6 +11,9 @@ class ViewController: UIViewController
         if !motionManager.isAccelerometerAvailable || //check available
             !motionManager.isGyroAvailable {return}
         
+        motionManager.gyroUpdateInterval = 0.01
+        motionManager.accelerometerUpdateInterval = 0.01
+        
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!)
         { data, Error in
             guard let mData = data else {return}
