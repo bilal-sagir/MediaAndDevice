@@ -1,17 +1,23 @@
-//
-//  ViewController.swift
-//  MediaAndDevice
-//
-//  Created by Bilal on 22.11.2021.
-//
-
 import UIKit
+
+
+extension UIColor
+{
+    public static var myColor: UIColor
+    {
+        return UIColor (named: "myColor")!
+    }
+}
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+    @IBOutlet weak var imageView: UIImageView!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        imageView.backgroundColor = UIColor.myColor
+        imageView.image = #imageLiteral(resourceName: "dog")
     }
 
 
